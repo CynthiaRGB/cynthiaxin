@@ -30,6 +30,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
               muted
               loop
               autoPlay
+              preload="auto"
             />
           ) : project.heroImage ? (
             /* eslint-disable-next-line @next/next/no-img-element */
@@ -58,11 +59,13 @@ export function ProjectRow({ project }: ProjectRowProps) {
             {project.summary}
           </p>
         )}
-        <div
-          className="mt-4 w-full"
-          style={{ height: "1px", backgroundColor: "#E6E9EC" }}
-          aria-hidden
-        />
+        {!["notion-book-cover-formatter", "second-brain-notion-template"].includes(project.slug) && (
+          <div
+            className="mt-4 w-full"
+            style={{ height: "1px", backgroundColor: "#E6E9EC" }}
+            aria-hidden
+          />
+        )}
       </div>
     </>
   );

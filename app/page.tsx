@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="mb-5">
         <Container>
           <section className="py-12 md:py-20 md:pt-20 md:pb-20" aria-labelledby="hero-heading">
             <h1
@@ -19,7 +19,7 @@ export default function HomePage() {
               Hi, I&apos;m Cynthia, a Seattle-based product designer who <em className="font-display italic">builds in public.</em>
             </h1>
           </section>
-          <section className="pb-16 md:pb-24" aria-labelledby="selected-work">
+          <section aria-labelledby="selected-work">
             <h2 id="selected-work" className="sr-only">
               Selected Work
             </h2>
