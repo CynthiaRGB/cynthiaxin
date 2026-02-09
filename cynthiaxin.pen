@@ -5915,7 +5915,6 @@
                     "align": "inside",
                     "thickness": 1
                   },
-                  "layout": "vertical",
                   "gap": 24,
                   "padding": [
                     0,
@@ -5932,8 +5931,37 @@
                         "align": "inside",
                         "thickness": 1
                       },
-                      "gap": 24,
+                      "layout": "vertical",
+                      "gap": 40,
                       "children": [
+                        {
+                          "type": "frame",
+                          "id": "nlSDA",
+                          "name": "Frame 2147225233",
+                          "width": "fill_container",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          },
+                          "gap": 10,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xiFup",
+                              "name": "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across RED and other platforms - exploring how ideas travel through tools, interfaces, and culture. My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a hospitality design class at Cornell during my junior year, to forming close friendships with architects at Harvard Graduate School of Design, to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people.",
+                              "fill": "#333333ff",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across RED and other platforms - exploring how ideas travel through tools, interfaces, and culture.\n\nMy design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a hospitality design class at Cornell during my junior year, to forming close friendships with architects at Harvard Graduate School of Design, to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people.",
+                              "lineHeight": 1.399999976158142,
+                              "fontFamily": "Geist",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
                         {
                           "type": "frame",
                           "id": "VE5zb",
@@ -6099,34 +6127,6 @@
                               ]
                             }
                           ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "nlSDA",
-                          "name": "Frame 2147225233",
-                          "width": "fill_container",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1
-                          },
-                          "gap": 10,
-                          "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "text",
-                              "id": "xiFup",
-                              "name": "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across RED and other platforms - exploring how ideas travel through tools, interfaces, and culture. My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a hospitality design class at Cornell during my junior year, to forming close friendships with architects at Harvard Graduate School of Design, to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people.",
-                              "fill": "#333333ff",
-                              "textGrowth": "fixed-width",
-                              "width": "fill_container",
-                              "content": "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across RED and other platforms - exploring how ideas travel through tools, interfaces, and culture.\n\nMy design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a hospitality design class at Cornell during my junior year, to forming close friendships with architects at Harvard Graduate School of Design, to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people.",
-                              "lineHeight": 1.399999976158142,
-                              "fontFamily": "Geist",
-                              "fontSize": 16,
-                              "fontWeight": "normal"
-                            }
-                          ]
                         }
                       ]
                     },
@@ -6139,6 +6139,7 @@
                         "align": "inside",
                         "thickness": 1
                       },
+                      "layout": "vertical",
                       "gap": 24,
                       "alignItems": "center",
                       "children": [
@@ -6153,8 +6154,7 @@
                           "stroke": {
                             "align": "inside",
                             "thickness": 1
-                          },
-                          "layout": "none"
+                          }
                         },
                         {
                           "type": "frame",
@@ -6167,22 +6167,7 @@
                           "stroke": {
                             "align": "inside",
                             "thickness": 1
-                          },
-                          "layout": "none"
-                        },
-                        {
-                          "type": "frame",
-                          "id": "dWHvZ",
-                          "name": "Image",
-                          "clip": true,
-                          "width": 240,
-                          "height": 240,
-                          "fill": "#ffffffff",
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1
-                          },
-                          "layout": "none"
+                          }
                         },
                         {
                           "type": "frame",

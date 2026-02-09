@@ -27,9 +27,21 @@ const quickFacts = [
   },
 ];
 
-const bioParagraphs = [
-  "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across RED and other platforms - exploring how ideas travel through tools, interfaces, and culture.",
-  "My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a hospitality design class at Cornell during my junior year, to forming close friendships with architects at Harvard Graduate School of Design, to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people.",
+type BioSegment = { type: "text"; content: string } | { type: "link"; content: string; href: string };
+
+const bioParagraphs: (string | BioSegment[])[] = [
+  [
+    { type: "text", content: "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across " },
+    { type: "link", content: "RED", href: "https://www.xiaohongshu.com/user/profile/5ba851effd78e10001ad7d81" },
+    { type: "text", content: " and other platforms - exploring how ideas travel through tools, interfaces, and culture." },
+  ],
+  [
+    { type: "text", content: "My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a " },
+    { type: "link", content: "hospitality design class at Cornell", href: "https://sha.cornell.edu/admissions-programs/undergraduate/academics/courses/properties-development-and-management/hadm3510/" },
+    { type: "text", content: " during my junior year, to forming close friendships with architects at " },
+    { type: "link", content: "Harvard Graduate School of Design", href: "https://www.gsd.harvard.edu/offices-and-facilities/advanced-studies-programs/programs/design-studies/" },
+    { type: "text", content: ", to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people." },
+  ],
   "In my free time, I travel around the world with my best friend!",
 ];
 
@@ -52,11 +64,29 @@ export default function AboutPage() {
           </section>
 
           <section className="flex flex-col gap-6 lg:flex-row lg:items-start">
-            <div className="flex max-w-[800px] min-w-0 flex-1 flex-col justify-start">
+            <div className="flex max-w-[680px] min-w-0 flex-1 flex-col justify-start">
               <div className="font-sans text-base leading-[1.4] text-[#333333]">
                 {bioParagraphs.map((para, i) => (
                   <p key={i} className="mb-6 last:mb-0">
-                    {para}
+                    {Array.isArray(para) ? (
+                      para.map((seg, j) =>
+                        seg.type === "link" ? (
+                          <a
+                            key={j}
+                            href={seg.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#858E97] transition-colors hover:text-[#333333]"
+                          >
+                            {seg.content}
+                          </a>
+                        ) : (
+                          <span key={j}>{seg.content}</span>
+                        )
+                      )
+                    ) : (
+                      para
+                    )}
                   </p>
                 ))}
               </div>
