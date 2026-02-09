@@ -30,6 +30,7 @@ const quickFacts = [
 const bioParagraphs = [
   "Design is one medium of storytelling. Beyond product work and vibe coding, I also create digital content and engage a global audience of 420,000+ across RED and other platforms - exploring how ideas travel through tools, interfaces, and culture.",
   "My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a hospitality design class at Cornell during my junior year, to forming close friendships with architects at Harvard Graduate School of Design, to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people.",
+  "In my free time, I travel around the world with my best friend!",
 ];
 
 export default function AboutPage() {
