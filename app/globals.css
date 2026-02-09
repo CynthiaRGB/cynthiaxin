@@ -23,12 +23,8 @@
 
   /* All links: editorial style from cynthiaxin.pen – no blue, no underline */
   a {
-    color: var(--color-font-black);
+    color: inherit;
     text-decoration: none;
-  }
-
-  a:hover {
-    opacity: 0.8;
   }
 
   /* Lists: no bullets, no default spacing that clashes */

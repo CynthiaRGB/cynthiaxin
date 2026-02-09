@@ -48,7 +48,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
             {project.title}
           </h3>
           {project.year && (
-            <span className="shrink-0 font-mono text-sm uppercase tracking-wide text-[#858E97]">
+            <span className="shrink-0 font-mono text-h4 uppercase tracking-wide text-[#858E97]">
               {project.year}
             </span>
           )}
