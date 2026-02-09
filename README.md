@@ -44,7 +44,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Design tokens (Tailwind)
 
-- **Colors:** `primary-offwhite` #FAFCFD, `font-black` #333333, `font-gray` #A3A3A3, `primary-light-gray` #E6E9EC
+- **Colors:** `primary-offwhite` #FAFCFD, `font-black` #333333, `font-gray` #858E97, `primary-light-gray` #E6E9EC
 - **Typography:** Display (H1–H3) via `font-display`, body `font-sans`, labels `font-mono`; sizes `text-h1` (48px), `text-h2` (32px), `text-h3` (24px), `text-body1` (16px, 1.4 line height)
 - **Layout:** `max-w-reading` 1800px, `px-gutter` 24px, `px-gutter-mobile` 16px
 

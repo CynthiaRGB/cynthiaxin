@@ -31,18 +31,18 @@ export function ProjectRow({ project }: ProjectRowProps) {
         </span>
       )}
       <div className="min-w-0 flex-1 pt-4">
-        <div className="flex w-full items-baseline justify-between gap-4">
+        <div className="flex w-full flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
           <h3 className="font-display text-2xl font-normal text-[#333333] md:text-[24px]">
             {project.title}
           </h3>
           {project.year && (
-            <span className="shrink-0 font-mono text-sm uppercase tracking-wide text-[#A3A3A3]">
+            <span className="shrink-0 font-mono text-sm uppercase tracking-wide text-[#858E97]">
               {project.year}
             </span>
           )}
         </div>
         {project.summary && (
-          <p className="mt-2 font-sans text-base leading-[1.4] text-[#333333]">
+          <p className="mt-1 font-sans text-base leading-[1.4] text-[#333333] sm:mt-4">
             {project.summary}
           </p>
         )}

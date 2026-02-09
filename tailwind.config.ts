@@ -15,7 +15,7 @@ const config: Config = {
         },
         font: {
           black: "#333333",
-          gray: "#A3A3A3",
+          gray: "#858E97",
         },
       },
       fontFamily: {

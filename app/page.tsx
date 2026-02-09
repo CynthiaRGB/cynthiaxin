@@ -12,12 +12,12 @@ export default function HomePage() {
       <main>
         <Container>
           <section className="py-12 md:py-20 md:pt-20 md:pb-20" aria-labelledby="hero-heading">
-            <h1 id="hero-heading" className="font-display text-[40px] font-normal leading-none text-[#333333] md:text-[48px]">
-              Hi, I&apos;m Cynthia, a Seattle-based
+            <h1
+              id="hero-heading"
+              className="font-display max-w-[1200px] text-[40px] font-normal leading-[1.4] text-[#333333] md:text-[48px]"
+            >
+              Hi, I&apos;m Cynthia, a Seattle-based product designer
             </h1>
-            <p className="mt-4 font-display text-[40px] font-normal leading-none text-[#333333] md:text-[48px]">
-              product designer
-            </p>
           </section>
           <section className="pb-16 md:pb-24" aria-labelledby="selected-work">
             <h2 id="selected-work" className="sr-only">

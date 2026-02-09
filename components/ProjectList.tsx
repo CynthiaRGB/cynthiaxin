@@ -8,7 +8,7 @@ interface ProjectListProps {
 export function ProjectList({ projects }: ProjectListProps) {
   if (projects.length === 0) {
     return (
-      <p className="font-sans text-base leading-[1.4] text-[#A3A3A3]">
+      <p className="font-sans text-base leading-[1.4] text-[#858E97]">
         No projects yet.
       </p>
     );

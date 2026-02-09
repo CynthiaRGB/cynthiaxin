@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="border-t border-[#E6E9EC] font-mono text-base uppercase tracking-wide text-[#A3A3A3]">
+    <footer className="border-t border-[#E6E9EC] font-mono text-base uppercase tracking-wide text-[#858E97]">
       <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between px-4 py-5 md:px-20">
         <p>Designed + Coded by Cynthia Xin</p>
         <div className="flex items-center" style={{ gap: "40px" }}>
