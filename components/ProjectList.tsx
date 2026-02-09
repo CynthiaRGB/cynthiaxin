@@ -14,7 +14,7 @@ export function ProjectList({ projects }: ProjectListProps) {
     );
   }
   return (
-    <ul className="list-none" role="list">
+    <ul className="grid list-none grid-cols-1 gap-6 sm:grid-cols-2" role="list" style={{ gap: "24px" }}>
       {projects.map((project) => (
         <li key={project.slug}>
           <ProjectRow project={project} />

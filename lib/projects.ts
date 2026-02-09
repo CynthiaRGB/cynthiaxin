@@ -15,6 +15,7 @@ export interface ProjectMeta {
   tags: string[];
   priority?: number;
   heroImage?: string;
+  heroVideo?: string;
 }
 
 function getSlugFromFilename(filename: string): string {
@@ -40,6 +41,7 @@ export function getProjects(): ProjectMeta[] {
       tags: Array.isArray(data.tags) ? data.tags : [],
       priority: typeof data.priority === "number" ? data.priority : 0,
       heroImage: data.heroImage as string | undefined,
+      heroVideo: data.heroVideo as string | undefined,
     };
   });
   projects.sort((a, b) => {
