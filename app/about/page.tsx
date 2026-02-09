@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AboutImages } from "@/components/AboutImages";
 
 export const metadata = {
   title: "About | Cynthia Xin",
@@ -72,15 +73,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex shrink-0 justify-end lg:ml-auto">
-              <div className="grid grid-cols-2 gap-6">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="h-[240px] w-[240px] shrink-0 border border-[#E6E9EC] bg-white"
-                    aria-hidden
-                  />
-                ))}
-              </div>
+              <AboutImages />
             </div>
           </section>
 
