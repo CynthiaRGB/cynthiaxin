@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { CursorProvider } from "@/context/CursorContext";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -67,7 +68,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${martinaPlantijn.variable}`}
     >
       <body className="font-sans">
-        {children}
+        <CursorProvider>{children}</CursorProvider>
       </body>
     </html>
   );

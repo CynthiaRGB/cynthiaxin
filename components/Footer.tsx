@@ -5,7 +5,7 @@ export function Footer() {
         <p>Designed + Coded by Cynthia Xin</p>
         <div className="flex items-center" style={{ gap: "40px" }}>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/cynthiayxin/"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-opacity hover:opacity-70 focus-visible:outline-offset-2"
@@ -13,7 +13,7 @@ export function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/@cynthiaxin"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-opacity hover:opacity-70 focus-visible:outline-offset-2"

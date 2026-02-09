@@ -1,3 +1,6 @@
+"use client";
+
+import { useCursor } from "@/context/CursorContext";
 import type { ProjectMeta } from "@/lib/projects";
 
 interface ProjectRowProps {
@@ -5,8 +8,17 @@ interface ProjectRowProps {
 }
 
 export function ProjectRow({ project }: ProjectRowProps) {
-  return (
-    <div className="flex min-w-0 flex-col">
+  const cursor = useCursor();
+  const cursorHandlers = {
+    onMouseEnter: () =>
+      cursor?.setCursor({
+        type: "pill",
+        label: project.cursorLabel ?? project.title,
+      }),
+    onMouseLeave: () => cursor?.setCursor({ type: "dot" }),
+  };
+  const content = (
+    <>
       {(project.heroVideo || project.heroImage) && (
         <span className="block w-full overflow-hidden">
           {project.heroVideo ? (
@@ -52,6 +64,24 @@ export function ProjectRow({ project }: ProjectRowProps) {
           aria-hidden
         />
       </div>
+    </>
+  );
+  if (project.link) {
+    return (
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex min-w-0 flex-col transition-opacity hover:opacity-90 focus-visible:outline-offset-2"
+        {...cursorHandlers}
+      >
+        {content}
+      </a>
+    );
+  }
+  return (
+    <div className="flex min-w-0 flex-col" {...cursorHandlers}>
+      {content}
     </div>
   );
 }

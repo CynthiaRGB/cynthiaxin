@@ -16,7 +16,7 @@ export default function HomePage() {
               id="hero-heading"
               className="font-display max-w-[1200px] text-[40px] font-normal leading-[1.4] text-[#333333] md:text-[48px]"
             >
-              Hi, I&apos;m Cynthia, a Seattle-based product designer
+              Hi, I&apos;m Cynthia, a Seattle-based product designer who <em className="font-display italic">builds in public.</em>
             </h1>
           </section>
           <section className="pb-16 md:pb-24" aria-labelledby="selected-work">
