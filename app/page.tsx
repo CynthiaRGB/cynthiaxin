@@ -1,0 +1,38 @@
+import { getProjects } from "@/lib/projects";
+import { Container } from "@/components/Container";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ProjectList } from "@/components/ProjectList";
+
+export default function HomePage() {
+  const projects = getProjects();
+  return (
+    <>
+      <Header />
+      <main>
+        <Container>
+          <section className="py-12 md:py-20 md:pt-20 md:pb-20" aria-labelledby="hero-heading">
+            <h1 id="hero-heading" className="font-display text-[40px] font-normal leading-none text-[#333333] md:text-[48px]">
+              Hi, I&apos;m Cynthia, a Seattle-based
+            </h1>
+            <p className="mt-4 font-display text-[40px] font-normal leading-none text-[#333333] md:text-[48px]">
+              product designer
+            </p>
+          </section>
+          <section className="pb-16 md:pb-24" aria-labelledby="selected-work">
+            <h2 id="selected-work" className="sr-only">
+              Selected Work
+            </h2>
+            <p className="font-mono text-base uppercase tracking-wide text-[#333333]">
+              Selected Work
+            </p>
+            <div className="mt-8">
+              <ProjectList projects={projects} />
+            </div>
+          </section>
+        </Container>
+      </main>
+      <Footer />
+    </>
+  );
+}

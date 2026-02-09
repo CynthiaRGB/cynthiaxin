@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-offwhite: #fafcfd;
+  --color-font-black: #333333;
+  --color-font-gray: #a3a3a3;
+  --color-primary-light-gray: #e6e9ec;
+  --font-martina: Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-primary-offwhite);
+  }
+
+  body {
+    background-color: var(--color-primary-offwhite);
+    color: var(--color-font-black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* All links: editorial style from cynthiaxin.pen – no blue, no underline */
+  a {
+    color: var(--color-font-black);
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  /* Lists: no bullets, no default spacing that clashes */
+  ul,
+  ol {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+/* Focus visible for accessibility */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-font-black;
+}
