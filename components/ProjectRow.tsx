@@ -6,14 +6,14 @@ interface ProjectRowProps {
 
 export function ProjectRow({ project }: ProjectRowProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex min-w-0 flex-col">
       {(project.heroVideo || project.heroImage) && (
-        <span className="block w-full overflow-hidden border border-[#E6E9EC]">
+        <span className="block w-full overflow-hidden">
           {project.heroVideo ? (
             <video
               src={project.heroVideo}
               className="block w-full"
-              style={{ height: "auto" }}
+              style={{ height: "auto", width: "100%" }}
               playsInline
               muted
               loop
@@ -24,8 +24,8 @@ export function ProjectRow({ project }: ProjectRowProps) {
             <img
               src={project.heroImage}
               alt=""
-              className="block w-full object-cover object-center"
-              style={{ height: "auto" }}
+              className="block w-full object-contain object-center"
+              style={{ height: "auto", width: "100%" }}
             />
           ) : null}
         </span>
@@ -46,6 +46,11 @@ export function ProjectRow({ project }: ProjectRowProps) {
             {project.summary}
           </p>
         )}
+        <div
+          className="mt-4 w-full"
+          style={{ height: "1px", backgroundColor: "#E6E9EC" }}
+          aria-hidden
+        />
       </div>
     </div>
   );

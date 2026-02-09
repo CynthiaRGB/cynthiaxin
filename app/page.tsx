@@ -23,9 +23,6 @@ export default function HomePage() {
             <h2 id="selected-work" className="sr-only">
               Selected Work
             </h2>
-            <p className="font-mono text-base uppercase tracking-wide text-[#333333]">
-              Selected Work
-            </p>
             <div className="mt-8">
               <ProjectList projects={projects} />
             </div>
