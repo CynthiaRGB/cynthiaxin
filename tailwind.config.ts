@@ -30,7 +30,7 @@ const config: Config = {
         "h3": ["24px", { lineHeight: "1" }],
         "body1": ["16px", { lineHeight: "1.4" }],
         "h4": ["16px", { lineHeight: "1", letterSpacing: "0.05em" }],
-        "h5": ["14px", { lineHeight: "1", letterSpacing: "0.05em" }],
+        "h5": ["12px", { lineHeight: "1", letterSpacing: "0.05em" }],
       },
       maxWidth: {
         reading: "1800px",
