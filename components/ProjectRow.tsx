@@ -69,7 +69,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
 
   const textBlock = (
     <div className="min-w-0 w-full flex-1 pt-4 flex flex-col gap-2">
-      <div className="flex min-w-0 w-full max-w-full flex-wrap items-center justify-between gap-x-4 gap-y-2">
+      <div className="flex min-w-0 w-full max-w-full flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-x-4 md:gap-y-2">
         <h3 className="min-w-0 m-0 font-display text-[20px] font-normal leading-[1.25] text-[#333333]">
           {project.title}
         </h3>
