@@ -69,12 +69,12 @@ export function ProjectRow({ project }: ProjectRowProps) {
 
   const textBlock = (
     <div className="min-w-0 w-full flex-1 pt-4 flex flex-col gap-2">
-      <div className="flex min-w-0 w-full max-w-full flex-wrap items-center justify-between gap-x-4 gap-y-1">
+      <div className="flex min-w-0 w-full max-w-full flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <h3 className="min-w-0 m-0 font-display text-[20px] font-normal leading-[1.25] text-[#333333]">
           {project.title}
         </h3>
         {project.year && (
-          <span className="shrink-0 whitespace-nowrap font-mono text-[16px] font-normal leading-[1.25] uppercase text-[#858E97] ml-auto">
+          <span className="shrink-0 whitespace-nowrap font-mono text-[16px] font-normal leading-[1.25] uppercase text-[#858E97] md:ml-auto">
             {project.year}
           </span>
         )}
