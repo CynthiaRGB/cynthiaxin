@@ -92,7 +92,7 @@ export default function AboutPage() {
               </div>
               <div className="mt-10 flex flex-col gap-10">
                 {quickFacts.map(({ label, value }) => (
-                  <div key={label} className="flex flex-col gap-[12px]">
+                  <div key={label} className="flex flex-col gap-[8px]">
                     <p className="font-mono text-[14px] uppercase tracking-wide text-[#858E97]">
                       {label}
                     </p>
