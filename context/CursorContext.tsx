@@ -82,8 +82,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
           aria-hidden
         >
           <div
-            className="flex items-center gap-2 rounded-full bg-[#333333] px-3 py-1.5 font-mono text-h5 uppercase tracking-wide text-[#FAFCFD]"
-            style={{ whiteSpace: "nowrap" }}
+            className="flex items-center gap-2 rounded-full border border-white/40 bg-white/65 px-3 py-1.5 font-mono text-h5 uppercase tracking-wide text-[#333333] shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150"
+            style={{ whiteSpace: "nowrap", WebkitBackdropFilter: "blur(20px) saturate(180%)" }}
           >
             {!cursor.hideArrow && (
               <svg
@@ -96,7 +96,7 @@ export function CursorProvider({ children }: { children: ReactNode }) {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="shrink-0"
+                className="shrink-0 text-[#333333]"
                 aria-hidden
               >
                 <line x1="5" y1="12" x2="19" y2="12" />

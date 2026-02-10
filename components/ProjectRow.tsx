@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useCursor } from "@/context/CursorContext";
 import type { ProjectMeta } from "@/lib/projects";
 
@@ -9,6 +10,7 @@ interface ProjectRowProps {
 
 export function ProjectRow({ project }: ProjectRowProps) {
   const cursor = useCursor();
+  const [svgHeroKey] = useState(() => Date.now());
   const cursorHandlers = {
     onMouseEnter: () =>
       cursor?.setCursor({
@@ -33,29 +35,52 @@ export function ProjectRow({ project }: ProjectRowProps) {
               preload="auto"
             />
           ) : project.heroImage ? (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
-              src={project.heroImage}
-              alt=""
-              className="block w-full object-contain object-center"
-              style={{ height: "auto", width: "100%" }}
-            />
+            project.heroImage.endsWith(".svg") ? (
+              <span className="block w-full overflow-hidden rounded-sm border border-[#E6E9EC] bg-[#F9F9F9] aspect-video">
+                <span className="flex h-full w-full items-center justify-center p-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    key={svgHeroKey}
+                    src={project.heroImage}
+                    alt=""
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </span>
+              </span>
+            ) : project.slug === "example-one" ? (
+              <span className="block w-full overflow-hidden aspect-video">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={project.heroImage}
+                  alt=""
+                  className="h-full w-full object-cover object-center"
+                />
+              </span>
+            ) : (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={project.heroImage}
+                alt=""
+                className="block w-full object-contain object-center"
+                style={{ height: "auto", width: "100%" }}
+              />
+            )
           ) : null}
         </span>
       )}
-      <div className="min-w-0 flex-1 pt-4">
-        <div className="flex w-full flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-          <h3 className="font-display text-2xl font-normal text-[#333333] md:text-[24px]">
+      <div className="min-w-0 w-full flex-1 pt-4 flex flex-col gap-2">
+        <div className="flex min-w-0 w-full max-w-full flex-wrap items-center justify-between gap-x-4 gap-y-1">
+          <h3 className="min-w-0 font-display text-2xl font-normal text-[#333333] md:text-[24px]">
             {project.title}
           </h3>
           {project.year && (
-            <span className="shrink-0 font-mono text-h4 uppercase tracking-wide text-[#858E97]">
+            <span className="shrink-0 whitespace-nowrap font-mono text-[16px] font-normal uppercase text-[#858E97] ml-auto">
               {project.year}
             </span>
           )}
         </div>
         {project.summary && (
-          <p className="mt-1 font-sans text-base leading-[1.4] text-[#333333] sm:mt-4">
+          <p className="font-sans text-base leading-[1.4] text-[#333333]">
             {project.summary}
           </p>
         )}
@@ -75,7 +100,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex min-w-0 flex-col transition-opacity hover:opacity-90 focus-visible:outline-offset-2"
+        className="flex min-w-0 w-full max-w-full flex-col transition-opacity hover:opacity-90 focus-visible:outline-offset-2"
         {...cursorHandlers}
       >
         {content}
@@ -83,7 +108,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
     );
   }
   return (
-    <div className="flex min-w-0 flex-col" {...cursorHandlers}>
+    <div className="flex min-w-0 w-full max-w-full flex-col" {...cursorHandlers}>
       {content}
     </div>
   );

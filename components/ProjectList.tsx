@@ -18,18 +18,18 @@ export function ProjectList({ projects }: ProjectListProps) {
   return (
     <>
       <ul
-        className="flex min-w-0 list-none flex-col gap-6 p-0 sm:hidden"
+        className="flex min-w-0 list-none flex-col gap-6 p-0 min-[1200px]:hidden"
         role="list"
         style={{ gap: "24px" }}
       >
         {projects.map((project) => (
-          <li key={project.slug} className="min-w-0">
+          <li key={project.slug} className="min-w-0 w-full max-w-full">
             <ProjectRow project={project} />
           </li>
         ))}
       </ul>
       <div
-        className="hidden sm:flex sm:flex-row"
+        className="hidden min-[1200px]:flex min-[1200px]:flex-row"
         style={{ gap: "24px" }}
       >
         <ul
@@ -38,7 +38,7 @@ export function ProjectList({ projects }: ProjectListProps) {
           style={{ gap: "24px" }}
         >
           {leftColumn.map((project) => (
-            <li key={project.slug} className="min-w-0">
+            <li key={project.slug} className="min-w-0 w-full max-w-full">
               <ProjectRow project={project} />
             </li>
           ))}
@@ -49,7 +49,7 @@ export function ProjectList({ projects }: ProjectListProps) {
           style={{ gap: "24px" }}
         >
           {rightColumn.map((project) => (
-            <li key={project.slug} className="min-w-0">
+            <li key={project.slug} className="min-w-0 w-full max-w-full">
               <ProjectRow project={project} />
             </li>
           ))}
