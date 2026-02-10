@@ -12,14 +12,6 @@ export function Footer() {
           >
             LinkedIn
           </a>
-          <a
-            href="https://www.youtube.com/@cynthiaxin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-[#333333] focus-visible:outline-offset-2"
-          >
-            YouTube
-          </a>
         </div>
       </div>
     </footer>
