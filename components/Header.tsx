@@ -9,7 +9,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="border-b border-[#E6E9EC] font-mono text-h5 uppercase tracking-wide text-[#858E97]">
+    <header className="border-b border-[#E6E9EC] font-mono text-[14px] uppercase tracking-wide text-[#858E97]">
       <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between px-4 py-5 md:px-20">
         <Link
           href="/"
