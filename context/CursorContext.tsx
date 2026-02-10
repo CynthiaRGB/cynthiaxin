@@ -82,8 +82,8 @@ export function CursorProvider({ children }: { children: ReactNode }) {
           aria-hidden
         >
           <div
-            className="flex items-center gap-2 rounded-full border border-white/40 bg-white/65 px-3 py-1.5 font-mono text-h5 uppercase tracking-wide text-[#333333] shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-xl backdrop-saturate-150"
-            style={{ whiteSpace: "nowrap", WebkitBackdropFilter: "blur(20px) saturate(180%)" }}
+            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/20 px-3 py-1.5 font-mono text-h5 uppercase tracking-wide text-[#333333] shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-[1.8]"
+            style={{ whiteSpace: "nowrap", WebkitBackdropFilter: "blur(40px) saturate(180%)" }}
           >
             {!cursor.hideArrow && (
               <svg
