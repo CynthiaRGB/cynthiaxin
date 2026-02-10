@@ -39,7 +39,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 key={svgHeroKey}
-                src={project.heroImage}
+                src={`${project.heroImage}?v=${svgHeroKey}`}
                 alt=""
                 className="max-h-full max-w-full object-contain"
               />

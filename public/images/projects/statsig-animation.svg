@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="1288" height="668" viewBox="0 0 1288 668">
   <style>
     .plate-0 {
-      animation: 1.25s cubic-bezier(0.39, 0.83, 0.34, 0.85) 0s infinite plate-0;
+      animation: 1.25s cubic-bezier(0.39, 0.83, 0.34, 0.85) 0s 1 forwards plate-0;
     }
 
     @keyframes plate-0 {
@@ -68,7 +68,7 @@
   <g id="plate-1" opacity="0" filter="url(#blur2)" class="plate-1">
     <style>
       .plate-1 {
-        animation: 1.25s cubic-bezier(0.39, 0.83, 0.34, 0.85) 1s infinite plate-1;
+        animation: 1.25s cubic-bezier(0.39, 0.83, 0.34, 0.85) 1s 1 forwards plate-1;
       }
 
       @keyframes plate-1 {
@@ -150,13 +150,13 @@
   </g>
   <style>
     .gray-chart {
-      animation: 1s ease-out 1.6s infinite chart-animation;
+      animation: 1s ease-out 1.6s 1 forwards chart-animation;
     }
     .green-chart {
-      animation: 1s ease-out 1.75s infinite chart-animation;
+      animation: 1s ease-out 1.75s 1 forwards chart-animation;
     }
     .blue-chart {
-      animation: 1s ease-out 1.9s infinite chart-animation;
+      animation: 1s ease-out 1.9s 1 forwards chart-animation;
     }
     @keyframes chart-animation {
       0% {
