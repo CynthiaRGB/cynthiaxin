@@ -37,7 +37,8 @@ const bioParagraphs: (string | BioSegment[])[] = [
   ],
   [
     { type: "text", content: "My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a " },
-    { type: "link", content: "hospitality design class at Cornell", href: "https://sha.cornell.edu/admissions-programs/undergraduate/academics/courses/properties-development-and-management/hadm3510/" },
+    { type: "text", content: "hotel design class at" },
+    { type: "link", content: "Cornell University", href: "https://www.cornell.edu/" },
     { type: "text", content: " during my junior year, to forming close friendships with architects at " },
     { type: "link", content: "Harvard Graduate School of Design", href: "https://www.gsd.harvard.edu/offices-and-facilities/advanced-studies-programs/programs/design-studies/" },
     { type: "text", content: ", to designing the interior of my own home - each experience quietly shaped how I think about space, systems, and people." },
