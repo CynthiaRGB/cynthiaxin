@@ -51,7 +51,7 @@ export function ProjectRow({ project, labelSize = "default", showDivider = true 
     <span ref={mediaRef} className="block w-full overflow-hidden" {...cursorHandlers}>
       {project.heroVideo ? (
         hasMatchedVideoFrame ? (
-          <span className="block w-full overflow-hidden rounded-sm border border-[#E6E9EC] bg-[#F9F9F9] aspect-[139/90]">
+          <span className="block w-full overflow-hidden rounded-sm bg-[#F9F9F9] aspect-[139/90]">
             <video
               src={shouldLoadVideo ? project.heroVideo : undefined}
               className={`h-full w-full object-cover object-center ${
