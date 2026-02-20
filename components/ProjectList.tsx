@@ -5,9 +5,15 @@ interface ProjectListProps {
   projects: ProjectMeta[];
   labelSize?: "default" | "small";
   showDividers?: boolean;
+  showMediaBorders?: boolean;
 }
 
-export function ProjectList({ projects, labelSize = "default", showDividers = true }: ProjectListProps) {
+export function ProjectList({
+  projects,
+  labelSize = "default",
+  showDividers = true,
+  showMediaBorders = true,
+}: ProjectListProps) {
   if (projects.length === 0) {
     return (
       <p className="font-sans text-base leading-[1.4] text-[#858E97]">
@@ -26,7 +32,12 @@ export function ProjectList({ projects, labelSize = "default", showDividers = tr
       >
         {projects.map((project) => (
           <li key={project.slug} className="min-w-0 w-full max-w-full">
-            <ProjectRow project={project} labelSize={labelSize} showDivider={showDividers} />
+            <ProjectRow
+              project={project}
+              labelSize={labelSize}
+              showDivider={showDividers}
+              showMediaBorders={showMediaBorders}
+            />
           </li>
         ))}
       </ul>
@@ -41,7 +52,12 @@ export function ProjectList({ projects, labelSize = "default", showDividers = tr
         >
           {leftColumn.map((project) => (
             <li key={project.slug} className="min-w-0 w-full max-w-full">
-              <ProjectRow project={project} labelSize={labelSize} showDivider={showDividers} />
+              <ProjectRow
+                project={project}
+                labelSize={labelSize}
+                showDivider={showDividers}
+                showMediaBorders={showMediaBorders}
+              />
             </li>
           ))}
         </ul>
@@ -52,7 +68,12 @@ export function ProjectList({ projects, labelSize = "default", showDividers = tr
         >
           {rightColumn.map((project) => (
             <li key={project.slug} className="min-w-0 w-full max-w-full">
-              <ProjectRow project={project} labelSize={labelSize} showDivider={showDividers} />
+              <ProjectRow
+                project={project}
+                labelSize={labelSize}
+                showDivider={showDividers}
+                showMediaBorders={showMediaBorders}
+              />
             </li>
           ))}
         </ul>

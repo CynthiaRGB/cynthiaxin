@@ -20,7 +20,7 @@ export function AboutImages() {
       {aboutImages.map(({ src, alt, pillLabel }) => (
         <div
           key={src}
-          className="relative aspect-square w-full overflow-hidden border border-[#E6E9EC] bg-white xl:h-[240px] xl:w-[240px]"
+          className="relative aspect-square w-full overflow-hidden bg-white xl:h-[240px] xl:w-[240px]"
           aria-hidden
           onMouseEnter={() => cursor?.setCursor({ type: "pill", label: pillLabel, hideArrow: true })}
           onMouseLeave={() => cursor?.setCursor({ type: "dot" })}

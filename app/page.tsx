@@ -24,7 +24,12 @@ export default function HomePage() {
               Selected Work
             </h2>
             <div className="mt-8">
-              <ProjectList projects={projects} labelSize="small" showDividers={false} />
+              <ProjectList
+                projects={projects}
+                labelSize="small"
+                showDividers={false}
+                showMediaBorders={false}
+              />
             </div>
           </section>
         </Container>

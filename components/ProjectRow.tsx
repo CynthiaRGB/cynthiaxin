@@ -8,15 +8,22 @@ interface ProjectRowProps {
   project: ProjectMeta;
   labelSize?: "default" | "small";
   showDivider?: boolean;
+  showMediaBorders?: boolean;
 }
 
-export function ProjectRow({ project, labelSize = "default", showDivider = true }: ProjectRowProps) {
+export function ProjectRow({
+  project,
+  labelSize = "default",
+  showDivider = true,
+  showMediaBorders = true,
+}: ProjectRowProps) {
   const cursor = useCursor();
   const [svgHeroKey] = useState(() => Date.now());
   const mediaRef = useRef<HTMLSpanElement | null>(null);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(!project.heroVideo);
   const hasMatchedVideoFrame = ["curated-by-cynthia", "icon-set-batch-editor"].includes(project.slug);
   const isIconSetBatchEditor = project.slug === "icon-set-batch-editor";
+  const shouldShowBorder = showMediaBorders || project.slug === "example-two";
 
   useEffect(() => {
     if (!project.heroVideo || shouldLoadVideo) return;
@@ -78,7 +85,11 @@ export function ProjectRow({ project, labelSize = "default", showDivider = true 
         )
       ) : project.heroImage ? (
         project.heroImage.endsWith(".svg") ? (
-          <span className="block w-full overflow-hidden rounded-sm border border-[#E6E9EC] bg-[#F9F9F9] aspect-video">
+          <span
+            className={`block w-full overflow-hidden rounded-sm bg-[#F9F9F9] aspect-video ${
+              shouldShowBorder ? "border border-[#E6E9EC]" : ""
+            }`}
+          >
             <span className="flex h-full w-full items-center justify-center p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
