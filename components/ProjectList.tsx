@@ -3,9 +3,11 @@ import type { ProjectMeta } from "@/lib/projects";
 
 interface ProjectListProps {
   projects: ProjectMeta[];
+  labelSize?: "default" | "small";
+  showDividers?: boolean;
 }
 
-export function ProjectList({ projects }: ProjectListProps) {
+export function ProjectList({ projects, labelSize = "default", showDividers = true }: ProjectListProps) {
   if (projects.length === 0) {
     return (
       <p className="font-sans text-base leading-[1.4] text-[#858E97]">
@@ -24,7 +26,7 @@ export function ProjectList({ projects }: ProjectListProps) {
       >
         {projects.map((project) => (
           <li key={project.slug} className="min-w-0 w-full max-w-full">
-            <ProjectRow project={project} />
+            <ProjectRow project={project} labelSize={labelSize} showDivider={showDividers} />
           </li>
         ))}
       </ul>
@@ -39,7 +41,7 @@ export function ProjectList({ projects }: ProjectListProps) {
         >
           {leftColumn.map((project) => (
             <li key={project.slug} className="min-w-0 w-full max-w-full">
-              <ProjectRow project={project} />
+              <ProjectRow project={project} labelSize={labelSize} showDivider={showDividers} />
             </li>
           ))}
         </ul>
@@ -50,7 +52,7 @@ export function ProjectList({ projects }: ProjectListProps) {
         >
           {rightColumn.map((project) => (
             <li key={project.slug} className="min-w-0 w-full max-w-full">
-              <ProjectRow project={project} />
+              <ProjectRow project={project} labelSize={labelSize} showDivider={showDividers} />
             </li>
           ))}
         </ul>

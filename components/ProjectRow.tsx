@@ -1,37 +1,81 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useCursor } from "@/context/CursorContext";
 import type { ProjectMeta } from "@/lib/projects";
 
 interface ProjectRowProps {
   project: ProjectMeta;
+  labelSize?: "default" | "small";
+  showDivider?: boolean;
 }
 
-export function ProjectRow({ project }: ProjectRowProps) {
+export function ProjectRow({ project, labelSize = "default", showDivider = true }: ProjectRowProps) {
   const cursor = useCursor();
   const [svgHeroKey] = useState(() => Date.now());
+  const mediaRef = useRef<HTMLSpanElement | null>(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(!project.heroVideo);
+  const hasMatchedVideoFrame = ["curated-by-cynthia", "icon-set-batch-editor"].includes(project.slug);
+  const isIconSetBatchEditor = project.slug === "icon-set-batch-editor";
+
+  useEffect(() => {
+    if (!project.heroVideo || shouldLoadVideo) return;
+    const node = mediaRef.current;
+    if (!node || typeof IntersectionObserver === "undefined") {
+      setShouldLoadVideo(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        setShouldLoadVideo(true);
+        observer.disconnect();
+      },
+      { rootMargin: "300px 0px" }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [project.heroVideo, shouldLoadVideo]);
+
   const cursorHandlers = {
-    onMouseEnter: () =>
+    onMouseEnter: () => {
+      if (project.heroVideo) setShouldLoadVideo(true);
       cursor?.setCursor({
         type: "pill",
         label: project.cursorLabel ?? project.title,
-      }),
+      });
+    },
     onMouseLeave: () => cursor?.setCursor({ type: "dot" }),
   };
   const heroMedia = (project.heroVideo || project.heroImage) && (
-    <span className="block w-full overflow-hidden" {...cursorHandlers}>
+    <span ref={mediaRef} className="block w-full overflow-hidden" {...cursorHandlers}>
       {project.heroVideo ? (
-        <video
-          src={project.heroVideo}
-          className="block w-full"
-          style={{ height: "auto", width: "100%" }}
-          playsInline
-          muted
-          loop
-          autoPlay
-          preload="auto"
-        />
+        hasMatchedVideoFrame ? (
+          <span className="block w-full overflow-hidden rounded-sm border border-[#E6E9EC] bg-[#F9F9F9] aspect-[139/90]">
+            <video
+              src={shouldLoadVideo ? project.heroVideo : undefined}
+              className={`h-full w-full object-cover object-center ${
+                isIconSetBatchEditor ? "scale-[1.06]" : ""
+              }`}
+              playsInline
+              muted
+              loop
+              autoPlay
+              preload={shouldLoadVideo ? "metadata" : "none"}
+            />
+          </span>
+        ) : (
+          <video
+            src={shouldLoadVideo ? project.heroVideo : undefined}
+            className="block w-full"
+            style={{ height: "auto", width: "100%" }}
+            playsInline
+            muted
+            loop
+            autoPlay
+            preload={shouldLoadVideo ? "metadata" : "none"}
+          />
+        )
       ) : project.heroImage ? (
         project.heroImage.endsWith(".svg") ? (
           <span className="block w-full overflow-hidden rounded-sm border border-[#E6E9EC] bg-[#F9F9F9] aspect-video">
@@ -74,7 +118,11 @@ export function ProjectRow({ project }: ProjectRowProps) {
           {project.title}
         </h3>
         {project.year && (
-          <span className="shrink-0 whitespace-nowrap font-mono text-[16px] font-normal leading-[1.25] uppercase text-[#858E97] md:ml-auto">
+          <span
+            className={`shrink-0 whitespace-nowrap font-mono font-normal leading-[1.25] uppercase text-[#858E97] md:ml-auto ${
+              labelSize === "small" ? "text-[14px]" : "text-[16px]"
+            }`}
+          >
             {project.year}
           </span>
         )}
@@ -84,7 +132,7 @@ export function ProjectRow({ project }: ProjectRowProps) {
           {project.summary}
         </p>
       )}
-      {!["notion-book-cover-formatter", "second-brain-notion-template"].includes(project.slug) && (
+      {showDivider && !["notion-book-cover-formatter", "second-brain-notion-template"].includes(project.slug) && (
         <div
           className="mt-4 w-full"
           style={{ height: "1px", backgroundColor: "#E6E9EC" }}
