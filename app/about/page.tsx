@@ -64,7 +64,7 @@ export default function AboutPage() {
             </h1>
           </section>
 
-          <section className="mt-8 flex flex-col gap-6 md:mt-0 xl:flex-row xl:flex-wrap xl:items-start xl:gap-6">
+          <section className="mt-8 flex flex-col gap-6 md:mt-0 xl:flex-row xl:flex-wrap xl:items-start xl:justify-between xl:gap-x-6 xl:gap-y-6">
             <div className="flex min-w-0 w-full max-w-[760px] flex-1 flex-col justify-start xl:min-w-[620px]">
               <div className="font-sans text-base leading-[1.4] text-[#333333]">
                 {bioParagraphs.map((para, i) => (
