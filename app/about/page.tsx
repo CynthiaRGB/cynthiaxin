@@ -37,7 +37,7 @@ const bioParagraphs: (string | BioSegment[])[] = [
   ],
   [
     { type: "text", content: "My design journey began relatively recently, after I transitioned from commercial real estate valuation. But in hindsight, the dots connect. From taking a " },
-    { type: "text", content: "hotel design class at" },
+    { type: "text", content: "hotel design class at " },
     { type: "link", content: "Cornell University", href: "https://www.cornell.edu/" },
     { type: "text", content: " during my junior year, to forming close friendships with architects at " },
     { type: "link", content: "Harvard Graduate School of Design", href: "https://www.gsd.harvard.edu/offices-and-facilities/advanced-studies-programs/programs/design-studies/" },
@@ -64,8 +64,8 @@ export default function AboutPage() {
             </h1>
           </section>
 
-          <section className="mt-8 flex flex-col gap-6 md:mt-0 md:flex-row md:items-start md:gap-6">
-            <div className="flex max-w-[680px] min-w-0 flex-1 flex-col justify-start">
+          <section className="mt-8 grid grid-cols-1 gap-6 md:mt-0 xl:grid-cols-[minmax(620px,760px)_minmax(0,504px)] xl:items-start xl:justify-between">
+            <div className="flex min-w-0 w-full max-w-[760px] flex-1 flex-col justify-start">
               <div className="font-sans text-base leading-[1.4] text-[#333333]">
                 {bioParagraphs.map((para, i) => (
                   <p key={i} className="mb-6 last:mb-0">
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-            <div className="flex shrink-0 md:ml-auto">
+            <div className="flex w-full xl:w-auto">
               <AboutImages />
             </div>
           </section>

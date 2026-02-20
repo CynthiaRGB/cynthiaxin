@@ -16,11 +16,11 @@ export function AboutImages() {
   const cursor = useCursor();
 
   return (
-    <div className="grid w-full grid-cols-2 gap-3 md:w-auto md:gap-6">
+    <div className="grid w-full grid-cols-2 gap-3 xl:w-auto xl:gap-6">
       {aboutImages.map(({ src, alt, pillLabel }) => (
         <div
           key={src}
-          className="relative aspect-square w-full overflow-hidden border border-[#E6E9EC] bg-white md:h-[240px] md:w-[240px]"
+          className="relative aspect-square w-full overflow-hidden border border-[#E6E9EC] bg-white xl:h-[240px] xl:w-[240px]"
           aria-hidden
           onMouseEnter={() => cursor?.setCursor({ type: "pill", label: pillLabel, hideArrow: true })}
           onMouseLeave={() => cursor?.setCursor({ type: "dot" })}
@@ -30,7 +30,7 @@ export function AboutImages() {
             alt={alt}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 50vw, 240px"
+            sizes="(max-width: 1279px) 50vw, 240px"
             quality={95}
             unoptimized
           />
