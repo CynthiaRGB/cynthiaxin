@@ -64,8 +64,8 @@ export default function AboutPage() {
             </h1>
           </section>
 
-          <section className="mt-8 grid grid-cols-1 gap-6 md:mt-0 xl:grid-cols-[minmax(620px,760px)_minmax(0,504px)] xl:items-start xl:justify-between">
-            <div className="flex min-w-0 w-full max-w-[760px] flex-1 flex-col justify-start">
+          <section className="mt-8 flex flex-col gap-6 md:mt-0 xl:flex-row xl:flex-wrap xl:items-start xl:gap-6">
+            <div className="flex min-w-0 w-full max-w-[760px] flex-1 flex-col justify-start xl:min-w-[620px]">
               <div className="font-sans text-base leading-[1.4] text-[#333333]">
                 {bioParagraphs.map((para, i) => (
                   <p key={i} className="mb-6 last:mb-0">
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-            <div className="flex w-full xl:w-auto">
+            <div className="flex w-full xl:w-[504px] xl:flex-none">
               <AboutImages />
             </div>
           </section>
